@@ -62,6 +62,24 @@
     #searchButton:hover, #randomButton:hover, #saveButton:hover {
         background-color: rgba(0, 0, 171, 1);
     }
+
+    .contain_poke_random {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .lista_poke table {
+        width: 80%;
+        border-collapse: collapse;
+        margin-bottom: 200px;
+    }
+    .lista_poke th, .lista_poke td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+    .lista_poke th {
+        background-color: #f2f2f2;
+    }
 </style>
 <body>
     <div class="container">
@@ -75,13 +93,33 @@
             <div id="pokemonInfo"></div>
             
             <h2>Pokémon Aleatorios Iniciales</h2>
-            <button id="randomButton">Generar Aleatorios</button>
-            <div id="randomPokemonList"></div>
+            <div class="contain_poke_random">
+                <button id="randomButton">Generar Aleatorios</button>
+                <div id="randomPokemonList"></div>
+            </div>
+            <div id="lista_poke_save" class="lista_poke">
+                <h2>Pokémon Guardados</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id Pokémon</th>
+                            <th>Nombre</th>
+                            <th>Imagen</th>
+                            <th>Tipo(s)</th>
+                            <th>Descripcion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="savedPokemonTableBody">
+                        <!-- Aquí se agregarán los Pokémon guardados -->
+                    </tbody>    
+                </table>
+            </div>
         </div>
         <div class="footer">
             <p>Desarrollado por Juan Diego Blanco Tapia - <?php echo date("Y"); ?></p>
         </div>
     </div>
     <script src="script.js"></script>
+    <script src="db.js"></script>
 </body>
 </html>
